@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Головна</a></li>
+            <li><a href="./about.html">Про нас</a></li>
+            <li><a href="./contact.html">Контакти</a></li>
+            <li><a href="./gallery.html">Галерея</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Галерея зображень та SVG</h1>
+    </header>
+    
+    <main>
+        <h2>Растрові зображення</h2>
+        
+        <img src="https://picsum.photos/600/400" alt="Випадкове зображення з Інтернету">
+        <img src="https://picsum.photos/600/400" alt="Зображення шириною 500" width="500">
+        <img src="https://picsum.photos/600/400" alt="Зображення висотою 300" height="300">
+        <img src="https://picsum.photos/600/400" alt="Зображення 400x400" width="400" height="400">
+
+        <h2>Векторна графіка (SVG)</h2>
+        
+        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" rx="20" width="100" height="100" fill="blue" />
+        </svg>
+
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="70" r="60" fill="green" />
+        </svg>
+
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="black" stroke-width="4" />
+            <circle cx="100" cy="100" r="5" fill="black" />
+            <line x1="100" y1="100" x2="150" y2="100" stroke="black" stroke-width="6" />
+            <line x1="100" y1="100" x2="100" y2="20" stroke="black" stroke-width="4" />
+        </svg>
+    </main>
+
+    <footer>
+        <section class="footer-social">
+            <ul class="list-unstyled">
+                <li><a href="https://facebook.com" target="_blank">facebook</a></li>
+                <li><a href="https://twitter.com" target="_blank">twitter</a></li>
+                <li><a href="https://github.com" target="_blank">github</a></li>
+                <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
+                <li><a href="https://youtube.com" target="_blank">youtube</a></li>
+                <li><a href="https://instagram.com" target="_blank">instagram</a></li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <li>&copy; 2026 Всі права захищені.</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
