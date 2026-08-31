@@ -13,3 +13,49 @@ h1, h2, h3 {
 .heading {
     color: green;
 }
+.body {
+    background: linear-gradient(to right, 
+        lightgreen 5%, 
+        mediumseagreen 17%, 
+        seagreen 40%, 
+        forestgreen 85%, 
+        darkgreen 95%);
+}
+
+.negative {
+    background: linear-gradient(to left, 
+        lightblue -50%, 
+        skyblue -10%, 
+        deepskyblue 0%, 
+        blue 100%, 
+        darkblue 150%);
+}
+
+.percents {
+    background: linear-gradient(to bottom, 
+        lightgreen 2em, 
+        mediumseagreen 4em, 
+        seagreen 8em, 
+        forestgreen 16em, 
+        green 32em, 
+        darkgreen 64em, 
+        #003300 128em);
+}
+
+.radial {
+    background: 
+        radial-gradient(ellipse at top, orange, transparent),
+        radial-gradient(ellipse at bottom, red, transparent);
+}
+
+div {
+    font-size: 1.6em;
+}
+
+span {
+    font-size: 1.6em;
+}
+
+strong {
+    font-size: 1em;
+}
