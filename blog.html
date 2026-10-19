@@ -1,75 +1,40 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="./index.html">Головна</a></li>
-            <li><a href="./about.html">Про нас</a></li>
-            <li><a href="./contact.html">Контакти</a></li>
-            <li><a href="./gallery.html">Галерея</a></li>
-            <li><a href="./blog.html">Блог</a></li>
-        </ul>
-    </nav>
-    
-    <header>
-        <h1 class="heading">Блог</h1>
+    <header class="site-header">
+        <h1>Мій Логотип</h1>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <main id="main">
-        <p>Ласкаво просимо до нашого блогу!</p>
-        <h2 class="h2">Підзаголовок для перевірки стилів</h2>
+
+    <main class="main-content" id="posts-container">
+        <!-- пости завантажуються динамічно через fetch -->
+        <p class="loading">Завантаження дописів...</p>
     </main>
 
-    <footer>
-        <section class="footer-social">
-            <ul class="list-unstyled">
-                <li><a href="https://facebook.com" target="_blank">facebook</a></li>
-                <li><a href="https://twitter.com" target="_blank">twitter</a></li>
-                <li><a href="https://github.com" target="_blank">github</a></li>
-                <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
-                <li><a href="https://youtube.com" target="_blank">youtube</a></li>
-                <li><a href="https://instagram.com" target="_blank">instagram</a></li>
-            </ul>
-        </section>
+    <aside class="sidebar">
+        <h3>Додатково</h3>
+        <p>Бічна панель (сайдбар) із віджетами, рекламою або архівом статей.</p>
+    </aside>
 
-        <section>
-            <div>
-                <h2>Контактна інформація</h2>
-                <ul>
-                    <li>Телефон: +380 123 456 789</li>
-                    <li>Email: Ukraine@kyiv.ua</li>
-                    <li>Адреса: вул. Хрещатик, 1, Київ, Україна</li>
-                </ul>
-            </div>
-            <div>
-                <h2>Корисні посилання</h2>
-                <ul>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 1</a></li>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 2</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <ul>
-                <li>&copy; 2026 Всі права захищені.</li>
-            </ul>
-        </section>
+    <footer class="site-footer">
+        <p>&copy; 2026 Усі права захищено.</p>
     </footer>
+
+    <script src="blog.js"></script>
 </body>
 </html>
-
-
-

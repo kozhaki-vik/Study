@@ -1,0 +1,91 @@
+/* скидання базових відступів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "h h"
+        "m s"
+        "f f";
+    gap: 15px;
+}
+
+.site-header {
+    grid-area: h;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    grid-area: m;
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: s;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+.site-footer {
+    grid-area: f;
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* стиль картки статті */
+.post {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.post p {
+    color: #555;
+}
+
+/* мобільна версія */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "m"
+            "s"
+            "f";
+    }
+}
