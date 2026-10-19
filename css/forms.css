@@ -1,4 +1,4 @@
-/* стилі для форм сайту */
+/* стилі для форми реєстрації */
 
 .form-container {
   display: flex;
@@ -12,16 +12,29 @@
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 30px;
   max-width: 500px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* скидаємо розмір шрифту всередині форми, щоб не діяло множення em */
+.form-card,
+.form-card div,
+.form-card * {
+  box-sizing: border-box;
+}
+
+.form-card div {
+  font-size: 1rem;
 }
 
 .form-card h2 {
   margin-top: 0;
   margin-bottom: 8px;
   color: #333;
+  font-size: 1.5rem;
 }
 
 .form-card p {
@@ -42,10 +55,12 @@
 }
 
 .site-form .form-row .form-group {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .site-form label {
+  font-size: 0.95rem;
   font-weight: 500;
   margin-bottom: 6px;
   color: #444;
@@ -55,10 +70,11 @@
 .site-form input[type="email"],
 .site-form input[type="tel"],
 .site-form input[type="password"] {
+  width: 100%;
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -67,7 +83,7 @@
   border-color: #2e7d32;
 }
 
-/* блок для статі */
+/* вибір статі */
 .gender-group .radio-options {
   display: flex;
   gap: 20px;
@@ -75,6 +91,7 @@
 }
 
 .gender-group .radio-options label {
+  font-size: 0.95rem;
   font-weight: normal;
   display: inline-flex;
   align-items: center;
@@ -82,7 +99,12 @@
   cursor: pointer;
 }
 
-/* кнопка відправки */
+.gender-group .radio-options input[type="radio"] {
+  margin: 0;
+  width: auto;
+}
+
+/* кнопка реєстрації */
 .submit-btn {
   width: 100%;
   background-color: #2e7d32;
@@ -90,7 +112,8 @@
   border: none;
   border-radius: 4px;
   padding: 12px;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.2s;
@@ -98,4 +121,16 @@
 
 .submit-btn:hover {
   background-color: #1b5e20;
+}
+
+/* адаптивність для мобільних екранів */
+@media (max-width: 520px) {
+  .site-form .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
 }
