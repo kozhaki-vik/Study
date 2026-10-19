@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вхід на сайт</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="page-container">
+    <h1>Головна сторінка</h1>
+    <p id="auth-status">Перевірка авторизації...</p>
+    <button id="open-modal-btn" class="btn btn-primary">Відкрити форму входу</button>
+    <button id="logout-btn" class="btn btn-secondary" style="display: none;">Вийти</button>
+  </div>
+
+  <!-- модальне вікно входу -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Вхід на сайт</h2>
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="user-login">Логін або Email:</label>
+          <input type="text" id="user-login" name="login" required placeholder="Введіть логін або email">
+        </div>
+
+        <div class="form-group">
+          <label for="user-password">Пароль:</label>
+          <input type="password" id="user-password" name="password" required placeholder="Введіть пароль">
+        </div>
+
+        <div class="form-group remember-group">
+          <label>
+            <input type="checkbox" id="remember-me" name="remember"> Запам'ятати мене
+          </label>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Увійти</button>
+          <button type="button" id="cancel-btn" class="btn btn-outline">Відмінити</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
