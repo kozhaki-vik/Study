@@ -5,59 +5,125 @@
 }
 
 body {
-  color: #000;
-  background: #fff;
-  font-family: Arial, sans-serif;
-  padding: 1em;
+  color: #2d3748;
+  background: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 1.5rem;
+  line-height: 1.6;
 }
 
-/* розрахунок розміру шрифту через clamp і calc */
-/* мін 16px, при 768px -> 20px, при 1920px -> 36px, макс 48px */
+/* Розрахунок розміру шрифту через clamp() та calc():
+   - 768px -> 20px, 1920px -> 36px (нахил: 16px / 1152px = 1/72 ≈ 1.389vw, зміщення: 20 - 768/72 ≈ 9.333px)
+   - Мінімальний розмір шрифту: 16px (для екранів < 768px)
+   - Максимальний розмір шрифту: 48px (для екранів > 1920px)
+*/
 p {
-  font-size: clamp(16px, calc(9.33px + 1.39vw), 48px);
-  line-height: 1.5;
+  font-size: clamp(16px, calc(9.333px + 1.389vw), 48px);
+  line-height: 1.6;
   margin-bottom: 1em;
 }
 
-/* mobile first: спочатку 1 колонка */
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile First макет: за замовчуванням 1 колонка */
 .container {
   display: grid;
-  gap: 15px;
+  gap: 1.25rem;
   grid-template-areas:
     "header"
     "sidebar"
     "main"
     "footer";
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .header {
   grid-area: header;
-  background: #f0f0f0;
-  padding: 15px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.header .subtitle {
+  color: #718096;
+  font-size: 1rem;
 }
 
 .sidebar {
   grid-area: sidebar;
-  background: #e8e8e8;
-  padding: 15px;
+  background: #edf2f7;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.sidebar h2 {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
 }
 
 .main {
   grid-area: main;
-  background: #fafafa;
-  padding: 15px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.main h2 {
+  font-size: 1.4rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
 }
 
 .footer {
   grid-area: footer;
-  background: #f0f0f0;
-  padding: 15px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* від 768px робимо 2 колонки */
+.footer h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+/* При переході через контрольну точку 768px перетворюємо макет на 2 колонки */
 @media (min-width: 768px) {
   .container {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     grid-template-areas:
       "header header"
       "sidebar main"

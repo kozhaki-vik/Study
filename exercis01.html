@@ -1,13 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lecture 12</title>
+  <title>Заняття 12 — Основи JavaScript</title>
+  <link rel="stylesheet" href="exercis01.css">
 </head>
 <body>
-  <h1>Hello, javascript!</h1>
-  
-  <script type="module" src="exercis01.js"></script>
+  <div class="page-container">
+    <header class="page-header">
+      <span class="badge">Заняття №12</span>
+      <h1>Основи JavaScript</h1>
+      <p>Змінні, діалогові вікна prompt/alert, розгалуження if-else та switch</p>
+    </header>
+
+    <div class="cards-grid">
+      <!-- 1. Привітання -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">1</span> Привітання рядків</h2>
+        <p class="card-desc">Конкатенація двох змінних рядкового типу: <code>"Hello" + " " + "JavaScript!"</code></p>
+        <div class="form-row">
+          <button id="btn-greeting" class="btn btn-primary">Показати привітання</button>
+        </div>
+        <div id="greeting-result" class="result-box">Натисніть кнопку для перевірки</div>
+      </section>
+
+      <!-- 2. Сума двох чисел -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">2</span> Сума чисел x + y</h2>
+        <p class="card-desc">Введення двох чисел через унарний плюс <code>+prompt</code> та їх додавання</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="num-x">Число x</label>
+            <input type="number" id="num-x" value="15" placeholder="Введіть x">
+          </div>
+          <div class="form-group">
+            <label for="num-y">Число y</label>
+            <input type="number" id="num-y" value="27" placeholder="Введіть y">
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-sum" class="btn btn-primary">Обчислити суму</button>
+        </div>
+        <div id="sum-result" class="result-box">Сума: 42</div>
+      </section>
+
+      <!-- 3. Вгадай число -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">3</span> Гра «Вгадай число»</h2>
+        <p class="card-desc">Спробуйте вгадати загадане число від 1 до 10 (target: 3)</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guess-input">Ваше число (1-10)</label>
+            <input type="number" id="guess-input" min="1" max="10" placeholder="Введіть 1-10">
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-guess" class="btn btn-primary">Перевірити</button>
+        </div>
+        <div id="guess-result" class="result-box">Введіть число та натисніть «Перевірити»</div>
+      </section>
+
+      <!-- 4. День тижня -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">4</span> День тижня (if/switch)</h2>
+        <p class="card-desc">Перевірка графіка (Понеділок — старт, П'ятниця — фініш, інше — звичайний)</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="day-select">Оберіть або введіть день</label>
+            <input type="text" id="day-input" placeholder="Понеділок, Friday, тощо">
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-day-if" class="btn btn-primary">Перевірити (if-else)</button>
+          <button id="btn-day-switch" class="btn btn-secondary">Switch</button>
+        </div>
+        <div id="day-result" class="result-box">Результат перевірки дня тижня</div>
+      </section>
+
+      <!-- 5. Оцінка за балами -->
+      <section class="card card-full">
+        <h2 class="card-title"><span class="num">5</span> Оцінка за балами (0–100)</h2>
+        <p class="card-desc">Шкала: &lt;50: F | &lt;70: D | &lt;80: C | &lt;90: B | &ge;90: A</p>
+        <div class="form-row">
+          <div class="form-group" style="max-width: 250px;">
+            <label for="score-input">Бали за іспит</label>
+            <input type="number" id="score-input" min="0" max="100" value="85" placeholder="0-100">
+          </div>
+          <div class="form-group" style="justify-content: flex-end;">
+            <button id="btn-score" class="btn btn-primary">Визначити оцінку</button>
+          </div>
+        </div>
+        <div id="score-result" class="result-box">Ваша оцінка: <span class="grade-badge grade-B">B</span></div>
+      </section>
+    </div>
+
+    <!-- Запуск оригінального prompt-сценарію -->
+    <div class="prompt-runner-card">
+      <h3>🚀 Оригінальний сценарій prompt / alert</h3>
+      <p>Ви можете запустити покроковий оригінальний інтерактивний ланцюжок через системні діалогові вікна браузера.</p>
+      <button id="btn-run-original" class="btn btn-run">Запустити покроковий prompt/alert</button>
+    </div>
+  </div>
+
+  <script src="exercis01.js"></script>
 </body>
 </html>

@@ -1,52 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lecture №2 - об'єктна модель документа</title>
+    <title>Заняття 16 — Об'єктна модель документа (DOM)</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="lesson16.css">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1 class='title' id='first-title'>First Title</h1>
+    <div class="page-container">
+        <header class="page-header">
+            <span class="badge">Заняття №16</span>
+            <h1>Об'єктна модель документа (DOM)</h1>
+            <p>Маніпуляція стилями, додавання класів classList, приховування елементів та перемикання теми</p>
         </header>
-        
-        <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
-          <button id="btn1">It's First Button</button>
-        </p>
-    </div>
-    
-    <div class="container">
-        <header>
-            <h1 class='title' id='second-title'>Second Title</h1>
-        </header>
-        
-        <p id="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
-          <button id="btn2">It's Second Button</button>
-        </p>
-    </div>
-    
-    <div class="container">
-        <header>
-            <h1 class='title' id='third-title'>Third Title</h1>
-        </header>
-        
-        <p id="p3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
-          <button id="btn3">It's Third Button</button>
-        </p>
-    </div>
-    
-    <div class="container">
-        <header>
-            <h1 class='title' id='fourth-title'>Fourth Title</h1>
-        </header>
-    
-        <p id="p4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
-          <button id="btn4">It's Fourth Button</button>
-        </p>
+
+        <div class="cards-layout">
+            <div class="container">
+                <header>
+                    <h2 class='title' id='first-title'>Блок 1: Золотий фон</h2>
+                </header>
+                
+                <p id="p1">
+                    Цей абзац динамічно отримує золотий фон через властивість style.backgroundColor.
+                    <button id="btn1">Кнопка 1 (Стилізована)</button>
+                </p>
+            </div>
+            
+            <div class="container">
+                <header>
+                    <h2 class='title' id='second-title'>Блок 2: Прямі стилі</h2>
+                </header>
+                
+                <p id="p2">
+                    Цей абзац отримує золотий фон, синій текст та розмір шрифту через JavaScript.
+                    <button id="btn2">Кнопка 2 (Сховати блок 1)</button>
+                </p>
+            </div>
+            
+            <div class="container">
+                <header>
+                    <h2 class='title' id='third-title'>Блок 3: Клас .third</h2>
+                </header>
+                
+                <p id="p3">
+                    Цей абзац стилізується через додавання класу .third зі списку classList.
+                    <button id="btn3">Кнопка 3 (Показати блок 1)</button>
+                </p>
+            </div>
+            
+            <div class="container">
+                <header>
+                    <h2 class='title' id='fourth-title'>Блок 4: Класи .fourth & .border</h2>
+                </header>
+            
+                <p id="p4">
+                    Цей абзац демонструє одночасне додавання кількох класів через classList.add('fourth', 'border').
+                    <button id="btn4">Кнопка 4 (Перемкнути тему)</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="controls-info">
+            <h3>📌 Призначення інтерактивних кнопок:</h3>
+            <ul>
+                <li><strong>Кнопка 1:</strong> Демонструє програмну зміну кольору та фону кнопки через JS.</li>
+                <li><strong>Кнопка 2:</strong> Ховає перший блок (<code>#p1.style.display = 'none'</code>).</li>
+                <li><strong>Кнопка 3:</strong> Повертає перший блок (<code>#p1.style.display = 'block'</code>).</li>
+                <li><strong>Кнопка 4:</strong> Перемикає світлу / темну тему сторінки (<code>body.classList.toggle('dark-theme')</code>).</li>
+            </ul>
+        </div>
     </div>
 
     <script type="module" src="js/lesson16.js"></script>

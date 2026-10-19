@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -13,84 +13,123 @@
     <link rel="stylesheet" href="./css/footer.css">
 </head>
 <body class="body">
-    <nav>
-        <ul>
-            <li><a href="./index.html">Головна</a></li>
-            <li><a href="./about.html">Про нас</a></li>
-            <li><a href="./contact.html">Контакти</a></li>
-            <li><a href="./gallery.html">Галерея</a></li>
-            <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./register.html">Реєстрація</a></li>
-        </ul>
+
+    <!-- навігаційна панель -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-brand">
+                <i class="fa-solid fa-graduation-cap"></i> Навчальний Проєкт
+            </a>
+            <ul class="nav-list">
+                <li><a href="./index.html" class="active">Головна</a></li>
+                <li><a href="./about.html">Про нас</a></li>
+                <li><a href="./contact.html">Контакти</a></li>
+                <li><a href="./gallery.html">Галерея</a></li>
+                <li><a href="./blog.html">Блог</a></li>
+                <li><a href="./register.html">Реєстрація</a></li>
+            </ul>
+        </div>
     </nav>
-    
-    <header>
-        <h1 class="heading">Головна сторінка</h1>
-    </header>
-    
-    <main id="main">
-        <p>Ласкаво просимо на головну сторінку нашого веб-сайту!</p>
-    <div>
-        <span>Outer <span>inner</span> outer</span>
-    </div>
-    <div>
-        <strong>Outer <strong>inner</strong> outer</strong>
-    </div>
+
+    <!-- основний контент -->
+    <main id="main" class="page-container">
+        <header class="content-header">
+            <h1 class="heading">Головна сторінка</h1>
+            <p class="lead-text">Ласкаво просимо на головну сторінку нашого навчального веб-сайту! Тут зібрані практичні роботи та демонстрації базових і просунутих можливостей сучасної верстки.</p>
+        </header>
+
+        <!-- демонстрація каскадності та успадкування шрифтів -->
+        <section class="font-demo">
+            <h3>Демонстрація успадкування шрифтів (em vs rem)</h3>
+            <p class="font-demo-desc">Елементи <code>span</code> примножують відносний розмір шрифту батьківського елемента, тоді як <code>strong</code> зберігає єдиний заданий масштаб:</p>
+            <div class="font-demo-box">
+                <div>
+                    <span>Outer <span>inner</span> outer</span>
+                </div>
+            </div>
+            <div class="font-demo-box">
+                <div>
+                    <strong>Outer <strong>inner</strong> outer</strong>
+                </div>
+            </div>
+        </section>
+
         <h2 class="h2">Підзаголовок для перевірки стилів</h2>
-    
-    <div class="percents">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cum magnam quae adipisci minima illum porro eius ipsa rem. Sequi eaque facere necessitatibus fugiat rerum facilis reprehenderit numquam dignissimos itaque!
-    </div>
+        <p>Цей підзаголовок демонструє застосування класу стилізації тексту, а блоки нижче ілюструють можливості складних CSS3-градієнтів.</p>
 
-    <div class="negative">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cum magnam quae adipisci minima illum porro eius ipsa rem. Sequi eaque facere necessitatibus fugiat rerum facilis reprehenderit numquam dignissimos itaque!
-    </div>
+        <!-- секція градієнтів -->
+        <section class="gradient-section">
+            <h2>Демонстрація фонових градієнтів</h2>
+            <div class="gradient-showcase">
+                <div class="gradient-block percents">
+                    <h4>Вертикальний лінійний градієнт (.percents)</h4>
+                    <p>Плавний градієнт від світло-зеленого до темно-зеленого з точками зупинки у відносних одиницях em (2em, 4em, 8em, 16em, 32em, 64em, 128em).</p>
+                </div>
 
-    <div class="radial">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cum magnam quae adipisci minima illum porro eius ipsa rem. Sequi eaque facere necessitatibus fugiat rerum facilis reprehenderit numquam dignissimos itaque!
-    </div>
+                <div class="gradient-block negative">
+                    <h4>Горизонтальний синій градієнт (.negative)</h4>
+                    <p>Лінійний градієнт у напрямку вліво з від'ємними та розширеними контрольними точками: -50%, -10%, 0%, 100%, 150%.</p>
+                </div>
+
+                <div class="gradient-block radial">
+                    <h4>Комбінований еліптичний радіальний градієнт (.radial)</h4>
+                    <p>Поєднання двох еліптичних радіальних градієнтів з помаранчевим та червоним кольорами, що переходять у повну прозорість.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- підвал сайту -->
     <footer>
-        <section class="footer-social">
-            <ul class="list-unstyled">
-                <li><a href="https://facebook.com" target="_blank">facebook</a></li>
-                <li><a href="https://twitter.com" target="_blank">twitter</a></li>
-                <li><a href="https://github.com" target="_blank">github</a></li>
-                <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
-                <li><a href="https://youtube.com" target="_blank">youtube</a></li>
-                <li><a href="https://instagram.com" target="_blank">instagram</a></li>
-            </ul>
-        </section>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>Про проєкт</h2>
+                    <p>Навчальний веб-сайт, створений у межах курсу Front-End розробки. Демонструє володіння стандартами HTML5, CSS3, Flexbox, формами та основами веб-дизайну.</p>
+                </div>
 
-        <section>
-            <div>
-                <h2>Контактна інформація</h2>
-                <ul>
-                    <li>Телефон: +380 123 456 789</li>
-                    <li>Email: Ukraine@kyiv.ua</li>
-                    <li>Адреса: вул. Хрещатик, 1, Київ, Україна</li>
-                </ul>
-            </div>
-            <div>
-                <h2>Корисні посилання</h2>
-                <ul>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 1</a></li>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 2</a></li>
-                </ul>
-            </div>
-        </section>
+                <div class="footer-col">
+                    <h2>Контактна інформація</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i> +380 123 456 789</li>
+                        <li><i class="fa-solid fa-envelope"></i> Ukraine@kyiv.ua</li>
+                        <li><i class="fa-solid fa-location-dot"></i> вул. Хрещатик, 1, Київ, Україна</li>
+                    </ul>
+                </div>
 
-        <section>
-            <ul>
-                <li>&copy; 2026 Всі права захищені.</li>
-            </ul>
-        </section>
+                <div class="footer-col">
+                    <h2>Корисні посилання</h2>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                        <li><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools Tutorials</a></li>
+                        <li><a href="https://fonts.google.com" target="_blank" rel="noopener noreferrer">Google Fonts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Ми у соцмережах</h2>
+                    <section class="footer-social">
+                        <ul class="list-unstyled">
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <section>
+                    <ul class="list-unstyled">
+                        <li>&copy; 2026 Навчальний проєкт. Всі права захищені.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
-
-
-
-
-

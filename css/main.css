@@ -1,18 +1,25 @@
+/* ========================================================
+   Стилі для навчальних завдань (Заняття №5 та №6)
+   ======================================================== */
+
+/* Базові селектори та кольори (Заняття №5) */
 h1, h2, h3 {
-    color: gray;
+    color: gray;
 }
 
 #main {
-    color: #e60202;
+    color: #e60202;
 }
 
 .h2 {
-    color: red;
+    color: red;
 }
 
 .heading {
-    color: green;
+    color: green;
 }
+
+/* Градієнтні фони (Заняття №6) */
 .body {
     background: linear-gradient(to right, 
         lightgreen 5%, 
@@ -48,14 +55,16 @@ h1, h2, h3 {
         radial-gradient(ellipse at bottom, red, transparent);
 }
 
-div {
+/* Демонстрація відносних розмірів шрифтів (Заняття №6) */
+/* Правила ізольовано для .font-demo, щоб запобігти каскадному множенню розміру на інших сторінках */
+.font-demo div {
     font-size: 1.6em;
 }
 
-span {
+.font-demo span {
     font-size: 1.6em;
 }
 
-strong {
+.font-demo strong {
     font-size: 1em;
 }

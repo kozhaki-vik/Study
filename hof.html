@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <title>Higher-Order Functions</title>
-    
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Higher-Order Functions (HOF)</title>
     <link rel="stylesheet" href="hof.css">
 </head>
 <body>
-    <h1>Higher-Order Functions (HOF)</h1>
-    <p>Результати виконання функцій вищих порядків виводяться в консоль.</p>
+    <div class="hof-container">
+        <h1>Higher-Order Functions (HOF)</h1>
+        <p class="subtitle">Практичне застосування функцій вищого порядку та методів масивів</p>
+
+        <div class="card">
+            <h2>1. Власна HOF функція calculate</h2>
+            <div class="result-item">calculate(sum, 0, [1, 2, 4]) &rarr; <strong>7</strong></div>
+            <div class="result-item">calculate(multiply, 1, [1, 2, 4]) &rarr; <strong>8</strong></div>
+        </div>
+
+        <div class="card">
+            <h2>2. Ітерація масиву через map (student_names)</h2>
+            <div class="result-item">name: Wick | index: 0</div>
+            <div class="result-item">name: Malcolm | index: 1</div>
+            <div class="result-item">name: Smith | index: 2</div>
+        </div>
+
+        <div class="card">
+            <h2>3. Розрахунок відсотка балів (students_information)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Бали (з 600)</th>
+                        <th>Відсоток</th>
+                    </tr>
+                </thead>
+                <tbody id="students-table">
+                    <tr>
+                        <td>Wick</td>
+                        <td>375</td>
+                        <td><span class="badge">62.5%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Malcolm</td>
+                        <td>405</td>
+                        <td><span class="badge">67.5%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Smith</td>
+                        <td>453</td>
+                        <td><span class="badge">75.5%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="back-link">&larr; Повернутися на головну</a>
+    </div>
 
     <script type="module" src="hof.js"></script>
 </body>

@@ -3,11 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises for lesson #15</title>
+  <title>Заняття 15 — Об'єкти в JavaScript</title>
+  <link rel="stylesheet" href="lesson15.css">
 </head>
 <body>
-  <h1>Об'єкти в JavaScript</h1>
-  <p>Результати роботи з об'єктами дивіться у консолі розробника.</p>
+  <div class="page-container">
+    <header class="page-header">
+      <span class="badge">Заняття №15</span>
+      <h1>Об'єкти в JavaScript</h1>
+      <p>Створення та модифікація об'єктів, перевірка isEmpty, цикл for...in та мутація властивостей</p>
+    </header>
+
+    <div class="cards-grid">
+      <!-- 1. Об'єкт user -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">1</span> Мутації об'єкта user</h2>
+        <p class="card-desc">Покрокове додавання, оновлення та видалення (delete) властивостей</p>
+        <div class="table-wrapper">
+          <table class="neat-table">
+            <thead>
+              <tr><th>Крок</th><th>Дія</th><th>Стан об'єкта</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Створення</td><td><code>{}</code></td></tr>
+              <tr><td>2</td><td>name = "Іван"</td><td><code>{name: "Іван"}</code></td></tr>
+              <tr><td>3</td><td>surname = "Сміт"</td><td><code>{name: "Іван", surname: "Сміт"}</code></td></tr>
+              <tr><td>4</td><td>name = "Петро"</td><td><code>{name: "Петро", surname: "Сміт"}</code></td></tr>
+              <tr><td>5</td><td>delete user.name</td><td><code>{surname: "Сміт"}</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-row">
+          <button id="btn-show-user" class="btn btn-primary">Показати об'єкт в консолі</button>
+        </div>
+        <div id="user-result" class="result-box">user: { surname: "Сміт" }</div>
+      </section>
+
+      <!-- 2. isEmpty(schedule) -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">2</span> Перевірка isEmpty(obj)</h2>
+        <p class="card-desc">Повертає <code>true</code>, якщо об'єкт порожній, та <code>false</code>, якщо є ключі</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="task-time">Час задачі</label>
+            <input type="text" id="task-time" value="8:30" placeholder="8:30">
+          </div>
+          <div class="form-group">
+            <label for="task-desc">Опис задачі</label>
+            <input type="text" id="task-desc" value="Вставай" placeholder="Вставай">
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-test-empty" class="btn btn-primary">Перевірити спочатку</button>
+          <button id="btn-add-task" class="btn btn-secondary">Додати задачу</button>
+          <button id="btn-clear-schedule" class="btn btn-secondary">Очистити</button>
+        </div>
+        <div id="empty-result" class="result-box">isEmpty(schedule): true (об'єкт порожній)</div>
+      </section>
+
+      <!-- 3. Підсумовування зарплат -->
+      <section class="card card-full">
+        <h2 class="card-title"><span class="num">3</span> Підсумовування зарплат (salaries)</h2>
+        <p class="card-desc">Обхід властивостей через цикл <code>for (let person in salaries)</code></p>
+        <div class="table-wrapper">
+          <table class="neat-table" id="salaries-table">
+            <thead>
+              <tr><th>Співробітник</th><th>Зарплата ($)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>John</td><td>100</td></tr>
+              <tr><td>Ann</td><td>160</td></tr>
+              <tr><td>Pete</td><td>130</td></tr>
+            </tbody>
+            <tfoot>
+              <tr class="total-row"><td>Разом:</td><td id="salaries-total-cell">390 $</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="new-name">Ім'я</label>
+            <input type="text" id="new-name" placeholder="Наприклад: Mary">
+          </div>
+          <div class="form-group">
+            <label for="new-salary">Зарплата ($)</label>
+            <input type="number" id="new-salary" placeholder="150">
+          </div>
+          <div class="form-group" style="justify-content: flex-end;">
+            <button id="btn-add-salary" class="btn btn-primary">Додати співробітника</button>
+          </div>
+        </div>
+        <div id="salaries-result" class="result-box success">Сума всіх зарплат: 390 $</div>
+      </section>
+
+      <!-- 4. multiplyNumeric(menu) -->
+      <section class="card card-full">
+        <h2 class="card-title"><span class="num">4</span> Множення числових властивостей на 2</h2>
+        <p class="card-desc">Функція <code>multiplyNumeric(obj)</code> подвоює числа і не змінює рядки (наприклад, title)</p>
+        <div class="compare-grid">
+          <div class="compare-box">
+            <h4>До виклику:</h4>
+            <pre class="code-view" id="menu-before">{
+  width: 200,
+  height: 300,
+  title: "Моє меню"
+}</pre>
+          </div>
+          <div class="compare-box">
+            <h4>Після multiplyNumeric():</h4>
+            <pre class="code-view" id="menu-after">{
+  width: 400,
+  height: 600,
+  title: "Моє меню"
+}</pre>
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-run-multiply" class="btn btn-primary">Помножити числові властивості</button>
+          <button id="btn-reset-menu" class="btn btn-secondary">Скинути меню</button>
+        </div>
+        <div id="menu-result" class="result-box success">Числові поля width та height успішно подвоєно!</div>
+      </section>
+    </div>
+
+    <!-- Консольний термінал -->
+    <div class="console-panel">
+      <div class="console-header">
+        <h3>💻 Лог виконання скрипта</h3>
+      </div>
+      <div id="console-output" class="console-output"></div>
+    </div>
+  </div>
 
   <script src="lesson15.js"></script>
 </body>

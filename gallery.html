@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -7,73 +7,147 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
 </head>
-<body>
+<body class="body">
+
+    <!-- навігація -->
     <nav>
         <ul>
             <li><a href="./index.html">Головна</a></li>
             <li><a href="./about.html">Про нас</a></li>
             <li><a href="./contact.html">Контакти</a></li>
-            <li><a href="./gallery.html">Галерея</a></li>
+            <li><a href="./gallery.html" class="active">Галерея</a></li>
             <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./register.html">Реєстрація</a></li>
+            <li><a href="./lesson8.html">Завдання 8</a></li>
+            <li><a href="./nav.html">Завдання 9</a></li>
         </ul>
     </nav>
     
-    <header>
-        <h1>Галерея зображень та SVG</h1>
-    </header>
-    
-    <main>
-        <h2>Растрові зображення</h2>
+    <div class="site-container">
+        <header>
+            <h1 class="heading">Галерея зображень та векторної графіки</h1>
+        </header>
         
-        <img src="./images/product-5.jpg" alt="Продукт 5">
-        <img src="./images/product-6.jpg" alt="Продукт 6" width="500">
-        <img src="./images/product-7.jpg" alt="Продукт 7" height="300">
-        <img src="./images/clock-demo-400px.png" alt="Годинник" width="400" height="400">
+        <main>
+            <div class="card-box">
+                <h2>Растрові зображення (JPG, PNG)</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./images/product-5.jpg" alt="Продукт 5">
+                        <div class="gallery-caption">
+                            <h3>Продукт №5</h3>
+                            <p>Демонстрація растрового зображення JPG</p>
+                        </div>
+                    </div>
 
-        <h2>Векторна графіка (SVG)</h2>
-        
-        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" rx="20" width="100" height="100" fill="blue" />
-        </svg>
+                    <div class="gallery-item">
+                        <img src="./images/product-6.jpg" alt="Продукт 6">
+                        <div class="gallery-caption">
+                            <h3>Продукт №6</h3>
+                            <p>Демонстрація масштабування об'єкта</p>
+                        </div>
+                    </div>
 
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="70" r="60" fill="green" />
-        </svg>
+                    <div class="gallery-item">
+                        <img src="./images/product-7.jpg" alt="Продукт 7">
+                        <div class="gallery-caption">
+                            <h3>Продукт №7</h3>
+                            <p>Зображення каталогу продукції</p>
+                        </div>
+                    </div>
 
-        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="90" fill="none" stroke="black" stroke-width="4" />
-            <circle cx="100" cy="100" r="5" fill="black" />
-            <line x1="100" y1="100" x2="150" y2="100" stroke="black" stroke-width="6" />
-            <line x1="100" y1="100" x2="100" y2="20" stroke="black" stroke-width="4" />
-        </svg>
-    </main>
+                    <div class="gallery-item">
+                        <img src="./images/clock-demo-400px.png" alt="Годинник">
+                        <div class="gallery-caption">
+                            <h3>Аналоговий годинник</h3>
+                            <p>Демонстрація прозорого PNG 400x400</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="card-box">
+                <h2>Векторна графіка (SVG)</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="25" y="25" rx="20" width="100" height="100" fill="#0284c7" />
+                        </svg>
+                        <div class="gallery-caption" style="text-align: center;">
+                            <h3>SVG Прямокутник</h3>
+                            <p>Закруглені кути rx="20"</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="75" cy="75" r="50" fill="#16a34a" />
+                        </svg>
+                        <div class="gallery-caption" style="text-align: center;">
+                            <h3>SVG Коло</h3>
+                            <p>Векторне коло радіусом 50px</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                        <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="75" cy="75" r="65" fill="none" stroke="#1e293b" stroke-width="4" />
+                            <circle cx="75" cy="75" r="4" fill="#0f172a" />
+                            <line x1="75" y1="75" x2="110" y2="75" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />
+                            <line x1="75" y1="75" x2="75" y2="35" stroke="#ef4444" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                        <div class="gallery-caption" style="text-align: center;">
+                            <h3>SVG Циферблат</h3>
+                            <p>Годинник зі стрілками та центром</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- підвал сайту -->
     <footer>
-        <section class="footer-social">
-            <ul class="list-unstyled">
-                <li><a href="https://facebook.com" target="_blank">facebook</a></li>
-                <li><a href="https://twitter.com" target="_blank">twitter</a></li>
-                <li><a href="https://github.com" target="_blank">github</a></li>
-                <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
-                <li><a href="https://youtube.com" target="_blank">youtube</a></li>
-                <li><a href="https://instagram.com" target="_blank">instagram</a></li>
-            </ul>
-        </section>
-        <section>
-            <ul>
-                <li>&copy; 2026 Всі права захищені.</li>
-            </ul>
-        </section>
+        <div class="footer-content">
+            <section class="footer-social">
+                <h3>Ми у соцмережах</h3>
+                <ul class="list-unstyled">
+                    <li><a href="https://facebook.com" target="_blank">facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">twitter</a></li>
+                    <li><a href="https://github.com" target="_blank">github</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
+                    <li><a href="https://youtube.com" target="_blank">youtube</a></li>
+                    <li><a href="https://instagram.com" target="_blank">instagram</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Контактна інформація</h3>
+                <ul>
+                    <li>Телефон: +380 123 456 789</li>
+                    <li>Email: Ukraine@kyiv.ua</li>
+                    <li>Адреса: вул. Хрещатик, 1, Київ, Україна</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Корисні посилання</h3>
+                <ul>
+                    <li><a href="./blog.html">Наш Блог</a></li>
+                    <li><a href="./lesson8.html">Форма реєстрації</a></li>
+                    <li><a href="./nav.html">Flexbox макет</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Навчальний проєкт. Всі права захищені.</p>
+        </div>
     </footer>
+
 </body>
 </html>
-
-
-
-

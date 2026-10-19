@@ -7,18 +7,65 @@
     <title>Hello AJAX</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f1f5f9;
+            min-height: 100vh;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .card-header {
+            background-color: #1e293b;
+            color: #ffffff;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+        .getBtn {
+            min-width: 130px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+        .getBtn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+        #console {
+            min-height: 50px;
+        }
+        #printResult pre {
+            background-color: #ffffff;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="card text-center">
-        <div class="card-header"> Hello, AJAX! </div>
-        <div class="card-body">
-            <h4 class="card-title">Console output:</h4>
-            <p class="card-text" id="console">Processing server response.</p>
-            <a href="#" class="btn btn-primary getBtn">Run</a>
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
+        <div class="w-100" style="max-width: 600px;">
+            <div class="card shadow-sm text-center">
+                <div class="card-header font-weight-bold py-3">
+                    Hello, AJAX!
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="card-title text-secondary mb-3 font-weight-bold">Console output:</h5>
+                    <div class="card-text mb-4" id="console">
+                        <div class="text-muted small py-2">Click "Run" to send an XMLHttpRequest.</div>
+                    </div>
+                    <a href="#" class="btn btn-primary getBtn shadow-sm py-2 px-4" role="button">Run</a>
+                </div>
+                <div class="card-footer text-muted bg-light p-3">
+                    <div class="small font-weight-bold text-uppercase text-secondary mb-2 text-left">Server response:</div>
+                    <div id="printResult" class="text-break">server response</div>
+                </div>
+            </div>
         </div>
-        <div class="card-footer text-muted" id="printResult">server response</div>
     </div>
+
     <!-- Optional JavaScript -->
     <script src="./xhr.js"></script>
 </body>

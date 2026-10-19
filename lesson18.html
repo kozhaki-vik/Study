@@ -3,12 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises for lesson #18</title>
+  <title>Заняття 18 — Клас Calculator (ООП)</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      margin: 0;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 650px;
+      width: 100%;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    h1 {
+      margin-top: 0;
+      color: #0f172a;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    p.desc {
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    /* блок калькулятора */
+    .calc-box {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 340px;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .screen {
+      background: #0f172a;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 2rem;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: right;
+      margin-bottom: 15px;
+      overflow: hidden;
+      min-height: 65px;
+    }
+    .grid-btns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button.calc-btn {
+      background: #334155;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button.calc-btn:hover {
+      background: #475569;
+    }
+    button.calc-btn:active {
+      transform: scale(0.96);
+    }
+    button.op-btn {
+      background: #0284c7;
+    }
+    button.op-btn:hover {
+      background: #0369a1;
+    }
+    button.clear-btn {
+      background: #ef4444;
+    }
+    button.clear-btn:hover {
+      background: #dc2626;
+    }
+    /* лог операцій */
+    .log-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+    .log-box h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+    .log-box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #475569;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
-  <h1>Клас Calculator (ООП)</h1>
-  <p>Результати роботи калькулятора виводяться в консоль розробника.</p>
+
+  <div class="container">
+    <h1>Клас Calculator (ООП)</h1>
+    <p class="desc">Реалізація методів add, subtract, multiply, divide та збереження результату в полі this.result.</p>
+
+    <div class="calc-box">
+      <div class="screen" id="calc-screen">0</div>
+      <div class="grid-btns">
+        <button class="calc-btn clear-btn" onclick="uiClear()">C</button>
+        <button class="calc-btn op-btn" onclick="uiOp('/')">/</button>
+        <button class="calc-btn op-btn" onclick="uiOp('*')">*</button>
+        <button class="calc-btn op-btn" onclick="uiOp('-')">-</button>
+
+        <button class="calc-btn" onclick="uiNum(7)">7</button>
+        <button class="calc-btn" onclick="uiNum(8)">8</button>
+        <button class="calc-btn" onclick="uiNum(9)">9</button>
+        <button class="calc-btn op-btn" onclick="uiOp('+')">+</button>
+
+        <button class="calc-btn" onclick="uiNum(4)">4</button>
+        <button class="calc-btn" onclick="uiNum(5)">5</button>
+        <button class="calc-btn" onclick="uiNum(6)">6</button>
+        <button class="calc-btn op-btn" onclick="uiCalc()">=</button>
+
+        <button class="calc-btn" onclick="uiNum(1)">1</button>
+        <button class="calc-btn" onclick="uiNum(2)">2</button>
+        <button class="calc-btn" onclick="uiNum(3)">3</button>
+        <button class="calc-btn" onclick="uiNum(0)">0</button>
+      </div>
+    </div>
+
+    <div class="log-box">
+      <h3>Тестовий запуск методів класу (з коду lesson18.js):</h3>
+      <ul>
+        <li><code>calc.displayResult();</code> // Початковий: 0</li>
+        <li><code>calc.add(10, 5);</code> // 15</li>
+        <li><code>calc.add(5);</code> // 15 + 5 = 20</li>
+        <li><code>calc.subtract(8);</code> // 20 - 8 = 12</li>
+        <li><code>calc.multiply(3);</code> // 12 * 3 = 36</li>
+        <li><code>calc.divide(6);</code> // 36 / 6 = 6</li>
+      </ul>
+      <p style="margin-top: 10px; margin-bottom: 0; color: #16a34a; font-weight: bold;">
+        Всі операції успішно виконуються також і у консолі браузера (F12).
+      </p>
+    </div>
+
+    <p style="text-align: center;"><a href="index.html" class="back-link">&larr; Повернутися на головну</a></p>
+  </div>
 
   <script src="lesson18.js"></script>
+  <script>
+    // Інтерактивна обгортка над класом Calculator
+    const uiCalcInstance = new Calculator();
+    let currentInput = '';
+    let currentOp = null;
+    let storedVal = null;
+    const screen = document.getElementById('calc-screen');
+
+    function uiNum(n) {
+      if (currentInput === '0') currentInput = '';
+      currentInput += n;
+      screen.textContent = currentInput;
+    }
+
+    function uiOp(op) {
+      if (currentInput !== '') {
+        storedVal = parseFloat(currentInput);
+        currentInput = '';
+      }
+      currentOp = op;
+    }
+
+    function uiCalc() {
+      if (storedVal !== null && currentInput !== '') {
+        const val = parseFloat(currentInput);
+        let res = 0;
+        if (currentOp === '+') res = uiCalcInstance.add(storedVal, val);
+        if (currentOp === '-') res = uiCalcInstance.subtract(storedVal, val);
+        if (currentOp === '*') res = uiCalcInstance.multiply(storedVal, val);
+        if (currentOp === '/') res = uiCalcInstance.divide(storedVal, val);
+        screen.textContent = res;
+        currentInput = res.toString();
+        storedVal = null;
+        currentOp = null;
+      }
+    }
+
+    function uiClear() {
+      uiCalcInstance.result = 0;
+      currentInput = '0';
+      storedVal = null;
+      currentOp = null;
+      screen.textContent = '0';
+    }
+  </script>
 </body>
 </html>

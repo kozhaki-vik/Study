@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -13,62 +13,125 @@
     <link rel="stylesheet" href="./css/footer.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="./index.html">Головна</a></li>
-            <li><a href="./about.html">Про нас</a></li>
-            <li><a href="./contact.html">Контакти</a></li>
-            <li><a href="./gallery.html">Галерея</a></li>
-            <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./register.html">Реєстрація</a></li>
-        </ul>
+
+    <!-- навігаційна панель -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-brand">
+                <i class="fa-solid fa-graduation-cap"></i> Навчальний Проєкт
+            </a>
+            <ul class="nav-list">
+                <li><a href="./index.html">Головна</a></li>
+                <li><a href="./about.html" class="active">Про нас</a></li>
+                <li><a href="./contact.html">Контакти</a></li>
+                <li><a href="./gallery.html">Галерея</a></li>
+                <li><a href="./blog.html">Блог</a></li>
+                <li><a href="./register.html">Реєстрація</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <h1>Про нас</h1>
-    </header>
+    <!-- основний контент -->
+    <main class="page-container">
+        <header class="content-header">
+            <h1>Про нас</h1>
+            <p class="lead-text">Ми — команда студентів, яка опановує сучасні технології веб-розробки. Цей сайт є практичним майданчиком для закріплення навичок семантичної верстки, роботи зі стилями та побудови адаптивних інтерфейсів.</p>
+        </header>
 
-    <main>
-        <p>Коротка інформація про нашу діяльність та історію створення цього сайту.</p>
+        <section class="about-section">
+            <h2>Наші ключові цілі та завдання</h2>
+            <p>У процесі навчання ми орієнтуємося на кращі галузеві практики та високі стандарти якості коду:</p>
+            <ul class="styled-list">
+                <li><strong>Семантична чистота:</strong> використання змістовних тегів HTML5 для створення доступних і зрозумілих веб-сторінок.</li>
+                <li><strong>Сучасний CSS:</strong> освоєння модулів Flexbox і Grid, каскадності, спадкування та адаптивного дизайну (RWD).</li>
+                <li><strong>Кросбраузерність:</strong> забезпечення стабільного та коректного відображення у всіх популярних браузерах.</li>
+                <li><strong>Оптимізація графіки:</strong> грамотне поєднання растрових форматів (JPG, PNG) та масштабованої векторної графіки (SVG).</li>
+                <li><strong>Інтерактивність:</strong> розробка динамічних елементів, робота з API та асинхронним завантаженням даних.</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Етапи нашого освітнього процесу</h2>
+            <p>Програма навчання розбита на послідовні практичні модулі:</p>
+            <ol class="styled-list">
+                <li><strong>Основи створення веб-проєкту та Git:</strong> налаштування робочого оточення, робота з репозиторіями та системами контролю версій.</li>
+                <li><strong>HTML-розмітка та структура документа:</strong> створення каркаса сторінок, робота з посиланнями, списками та заголовками.</li>
+                <li><strong>Медіа-елементи та графіка:</strong> вбудовування зображень, робота з пропорціями та векторні SVG-примітиви.</li>
+                <li><strong>Каскадні стилі (CSS):</strong> блокова модель (box model), селектори, градієнти, одиниці виміру та робота зі шрифтами.</li>
+                <li><strong>Форми та взаємодія:</strong> валідація введених даних, позиціонування та стилізація полів форми.</li>
+            </ol>
+        </section>
+
+        <section class="about-section">
+            <h2>Наші принципи роботи</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-code"></i> Охайний код</h3>
+                    <p>Дотримуємося єдиного стилю відступів, зрозумілих назв класів та коментування ключових рішень.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-mobile-screen"></i> Адаптивність</h3>
+                    <p>Кожна сторінка зручно переглядається як на великих моніторах, так і на смартфонах.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fa-solid fa-bolt"></i> Швидкодія</h3>
+                    <p>Мінімальне навантаження зайвими скриптами, оптимальне використання ресурсів та легкі шрифти.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- підвал сайту -->
     <footer>
-        <section class="footer-social">
-            <ul class="list-unstyled">
-                <li><a href="https://facebook.com" target="_blank">facebook</a></li>
-                <li><a href="https://twitter.com" target="_blank">twitter</a></li>
-                <li><a href="https://github.com" target="_blank">github</a></li>
-                <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
-                <li><a href="https://youtube.com" target="_blank">youtube</a></li>
-                <li><a href="https://instagram.com" target="_blank">instagram</a></li>
-            </ul>
-        </section>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>Про проєкт</h2>
+                    <p>Навчальний веб-сайт, створений у межах курсу Front-End розробки. Демонструє володіння стандартами HTML5, CSS3, Flexbox, формами та основами веб-дизайну.</p>
+                </div>
 
-        <section>
-            <div>
-                <h2>Контактна інформація</h2>
-                <ul>
-                    <li>Телефон: +380 123 456 789</li>
-                    <li>Email: Ukraine@kyiv.ua</li>
-                    <li>Адреса: вул. Хрещатик, 1, Київ, Україна</li>
-                </ul>
-            </div>
-            <div>
-                <h2>Корисні посилання</h2>
-                <ul>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 1</a></li>
-                    <li><a href="https://www.example.com" target="_blank">Приклад 2</a></li>
-                </ul>
-            </div>
-        </section>
+                <div class="footer-col">
+                    <h2>Контактна інформація</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i> +380 123 456 789</li>
+                        <li><i class="fa-solid fa-envelope"></i> Ukraine@kyiv.ua</li>
+                        <li><i class="fa-solid fa-location-dot"></i> вул. Хрещатик, 1, Київ, Україна</li>
+                    </ul>
+                </div>
 
-        <section>
-            <ul>
-                <li>&copy; 2026 Всі права захищені.</li>
-            </ul>
-        </section>
+                <div class="footer-col">
+                    <h2>Корисні посилання</h2>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                        <li><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools Tutorials</a></li>
+                        <li><a href="https://fonts.google.com" target="_blank" rel="noopener noreferrer">Google Fonts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h2>Ми у соцмережах</h2>
+                    <section class="footer-social">
+                        <ul class="list-unstyled">
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <section>
+                    <ul class="list-unstyled">
+                        <li>&copy; 2026 Навчальний проєкт. Всі права захищені.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
-
-

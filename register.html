@@ -5,77 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реєстрація</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/forms.css">
-    <link rel="stylesheet" href="./css/footer.css">
 </head>
-<body class="body">
+<body class="register-page">
 
     <!-- навігація -->
-    <nav>
-        <ul>
-            <li><a href="./index.html">Головна</a></li>
-            <li><a href="./about.html">Про нас</a></li>
-            <li><a href="./contact.html">Контакти</a></li>
-            <li><a href="./gallery.html">Галерея</a></li>
-            <li><a href="./blog.html">Блог</a></li>
-            <li><a href="./register.html">Реєстрація</a></li>
-        </ul>
-    </nav>
+    <header class="site-nav-wrapper">
+        <nav class="site-main-nav">
+            <ul>
+                <li><a href="./index.html">Головна</a></li>
+                <li><a href="./about.html">Про нас</a></li>
+                <li><a href="./contact.html">Контакти</a></li>
+                <li><a href="./gallery.html">Галерея</a></li>
+                <li><a href="./blog.html">Блог</a></li>
+                <li class="active"><a href="./register.html">Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- форма реєстрації -->
     <main class="form-container">
-        <div class="form-card">
+        <section class="form-section">
             <h2>Реєстрація на сайті</h2>
-            <p>Заповніть форму для створення облікового запису</p>
+            <p class="form-subtitle">Заповніть форму для створення облікового запису</p>
 
             <form action="#" method="POST" class="site-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="lastName">Прізвище:</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Введіть прізвище" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="firstName">Ім'я:</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Введіть ім'я" required>
-                    </div>
+                <div class="form-field">
+                    <label for="lastName">Прізвище:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Введіть прізвище" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-field">
+                    <label for="firstName">Ім'я:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Введіть ім'я" required>
+                </div>
+
+                <div class="form-field">
                     <label for="email">Електронна адреса:</label>
                     <input type="email" id="email" name="email" placeholder="example@mail.com" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-field">
                     <label for="phone">Номер телефону:</label>
                     <input type="tel" id="phone" name="phone" placeholder="+380..." required>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="password">Пароль:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
+                <div class="form-field">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="confirmPassword">Підтвердження пароля:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    </div>
+                <div class="form-field">
+                    <label for="confirmPassword">Підтвердження пароля:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
                 </div>
 
                 <!-- вибір статі -->
-                <div class="form-group gender-group">
+                <div class="form-field">
                     <label>Стать:</label>
                     <div class="radio-options">
-                        <label>
+                        <label class="radio-label">
                             <input type="radio" name="gender" value="female" required> Жінка
                         </label>
-                        <label>
+                        <label class="radio-label">
                             <input type="radio" name="gender" value="male"> Чоловік
                         </label>
                     </div>
@@ -83,16 +75,12 @@
 
                 <button type="submit" class="submit-btn">Зареєструватися</button>
             </form>
-        </div>
+        </section>
     </main>
 
     <!-- підвал сайту -->
-    <footer>
-        <section>
-            <ul>
-                <li>&copy; 2026 Навчальний проєкт. Всі права захищені.</li>
-            </ul>
-        </section>
+    <footer class="site-footer">
+        <p>&copy; 2026 Навчальний проєкт. Всі права захищені.</p>
     </footer>
 
 </body>

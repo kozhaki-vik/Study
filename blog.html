@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог</title>
+    <title>TECH BLOG | Останні публікації</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
     <header class="site-header">
-        <h1>Мій Логотип</h1>
+        <div class="logo">
+            <a href="blog.html" class="logo-link">
+                <svg class="logo-icon" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <div class="logo-text-wrapper">
+                    <span class="logo-brand">TECH <span class="accent">BLOG</span></span>
+                    <span class="logo-sub">JOURNAL &amp; CODE</span>
+                </div>
+            </a>
+        </div>
         <nav class="site-nav">
             <ul>
                 <li><a href="index.html">Головна</a></li>
-                <li><a href="about.html">Про нас</a></li>
-                <li><a href="blog.html">Блог</a></li>
+                <li><a href="blog.html" class="active">Блог</a></li>
                 <li><a href="gallery.html">Галерея</a></li>
                 <li><a href="contact.html">Контакти</a></li>
             </ul>
@@ -22,17 +32,54 @@
     </header>
 
     <main class="main-content" id="posts-container">
-        <!-- пости завантажуються динамічно через fetch -->
-        <p class="loading">Завантаження дописів...</p>
+        <!-- Пости завантажуються динамічно через fetch -->
+        <div class="loading-state">
+            <div class="spinner"></div>
+            <p>Завантаження дописів із сервера...</p>
+        </div>
     </main>
 
     <aside class="sidebar">
-        <h3>Додатково</h3>
-        <p>Бічна панель (сайдбар) із віджетами, рекламою або архівом статей.</p>
+        <div class="widget">
+            <h3 class="widget-title">Додатково</h3>
+            <p class="widget-text">Бічна панель (сайдбар) із віджетами, рекламою або архівом статей.</p>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-subtitle">Категорії</h4>
+            <ul class="widget-list">
+                <li><a href="#">Веб-розробка <span>(14)</span></a></li>
+                <li><a href="#">JavaScript &amp; TypeScript <span>(9)</span></a></li>
+                <li><a href="#">Штучний інтелект <span>(6)</span></a></li>
+                <li><a href="#">Дизайн та UX <span>(8)</span></a></li>
+                <li><a href="#">Бази даних &amp; API <span>(5)</span></a></li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-subtitle">Популярні теги</h4>
+            <div class="tag-cloud">
+                <span class="tag">#javascript</span>
+                <span class="tag">#webdev</span>
+                <span class="tag">#css3</span>
+                <span class="tag">#frontend</span>
+                <span class="tag">#html5</span>
+                <span class="tag">#react</span>
+                <span class="tag">#api</span>
+                <span class="tag">#technology</span>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-subtitle">Про блог</h4>
+            <p class="widget-text small">
+                Щоденні дописи, корисні гайди та новини зі світу інформаційних технологій.
+            </p>
+        </div>
     </aside>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Усі права захищено.</p>
+        <p>&copy; 2026 TECH BLOG. Усі права захищено.</p>
     </footer>
 
     <script src="blog.js"></script>

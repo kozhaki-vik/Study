@@ -1,27 +1,43 @@
-/* контейнер для центрування */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f8fafc;
+  color: #333;
+  margin: 0;
+  padding: 30px 15px;
+}
+
+/* Контейнер для всього вмісту сторінки, відцентрований посередині */
 .page-container {
   max-width: 800px;
   margin: 0 auto;
   border: 2px solid #555;
-  padding: 20px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* базовий блок */
+/* Базовий бокс */
 .box {
   border: 5px solid rebeccapurple;
   background-color: lightgray;
   padding: 40px;
-  margin: 40px;
+  margin: 40px auto;
   width: 300px;
   height: 150px;
 }
 
-/* стандартна блокова модель */
+/* box1: стандартна блокова модель (content-box) */
 .box1 {
   box-sizing: content-box;
 }
 
-/* альтернативна модель та поля */
+/* box2: альтернативна блокова модель (border-box) з заданими полями та відступами */
 .box2 {
   box-sizing: border-box;
   border: 5px dashed black;
@@ -32,10 +48,18 @@
   padding: 1em;
 }
 
-/* щоб спан не перекривав рядки */
+/* Бокс із текстом: min-height щоб уникнути вилізання тексту за межі блоку */
+.box-content,
+.box:last-child {
+  height: auto;
+  min-height: 150px;
+}
+
+/* Вбудований елемент span: inline-block, щоб рядки дотримувалися відступів та рамок без перекриття */
 .box span {
   display: inline-block;
   background-color: pink;
   border: 5px solid black;
   padding: 1em;
+  margin: 0.5em 0;
 }

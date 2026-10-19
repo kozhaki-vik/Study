@@ -3,11 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises for lesson #14</title>
+  <title>Заняття 14 — Робота з масивами</title>
+  <link rel="stylesheet" href="lesson14.css">
 </head>
 <body>
-  <h1>Робота з масивами</h1>
-  <p>Результати виконання вправ дивіться в консолі розробника (F12).</p>
+  <div class="page-container">
+    <header class="page-header">
+      <span class="badge">Заняття №14</span>
+      <h1>Робота з масивами та цикли</h1>
+      <p>Ітерація масивів (for, while, do...while), методи push/pop/shift/unshift/splice та підсумовування</p>
+    </header>
+
+    <div class="cards-grid">
+      <!-- 1. fruits & loops -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">1</span> Масив fruits і три цикли</h2>
+        <p class="card-desc">Почергове виведення елементів через <code>for</code>, <code>while</code> та <code>do...while</code></p>
+        <div class="array-badge-list" id="fruits-badges">
+          <!-- бейджі генеруються JS -->
+        </div>
+        <div class="form-row">
+          <button id="btn-loop-for" class="btn btn-primary">Цикл for</button>
+          <button id="btn-loop-while" class="btn btn-secondary">while</button>
+          <button id="btn-loop-dowhile" class="btn btn-secondary">do...while</button>
+        </div>
+        <div id="fruits-result" class="result-box">Оберіть цикл для демонстрації</div>
+      </section>
+
+      <!-- 2. Парні числа -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">2</span> Парні числа [1..10]</h2>
+        <p class="card-desc">Фільтрація масиву чисел за умовою <code>Numbs[i] % 2 === 0</code></p>
+        <div class="array-badge-list" id="numbs-badges">
+          <!-- 1..10 -->
+        </div>
+        <div class="form-row">
+          <button id="btn-filter-even" class="btn btn-primary">Виділити парні числа</button>
+        </div>
+        <div id="numbs-result" class="result-box">Парні числа: 2, 4, 6, 8, 10</div>
+      </section>
+
+      <!-- 3. Операції з масивом names -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">3</span> Мутації масиву names</h2>
+        <p class="card-desc">Послідовність методів: push, unshift, перевірка includes та splice</p>
+        <div class="step-list">
+          <div class="step-item">1. Початок: <code>['Batman']</code></div>
+          <div class="step-item">2. <code>push('Joker')</code> & <code>unshift('Bane')</code></div>
+          <div class="step-item">3. Перевірка та додавання <code>Alfred</code></div>
+          <div class="step-item">4. Видалення <code>Batman</code> через <code>indexOf</code> + <code>splice</code></div>
+        </div>
+        <div class="form-row">
+          <button id="btn-run-names" class="btn btn-primary">Показати результат операцій</button>
+        </div>
+        <div id="names-result" class="result-box">Підсумковий масив: ['Bane', 'Joker', 'Alfred']</div>
+      </section>
+
+      <!-- 4. sumInput() -->
+      <section class="card">
+        <h2 class="card-title"><span class="num">4</span> Функція sumInput()</h2>
+        <p class="card-desc">Введення чисел до скасування/порожнього рядка та підрахунок суми</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="input-number">Додати число до списку</label>
+            <input type="number" id="input-number" placeholder="Наприклад: 12">
+          </div>
+        </div>
+        <div class="form-row">
+          <button id="btn-add-number" class="btn btn-primary">Додати число</button>
+          <button id="btn-clear-numbers" class="btn btn-secondary">Очистити</button>
+          <button id="btn-sum-prompt" class="btn btn-secondary">Через prompt()</button>
+        </div>
+        <div id="suminput-result" class="result-box">Введені числа: [] | Сума: 0</div>
+      </section>
+
+      <!-- 5. Масив styles -->
+      <section class="card card-full">
+        <h2 class="card-title"><span class="num">5</span> Музичні стилі styles</h2>
+        <p class="card-desc">Робота з крайніми та центральними елементами масиву</p>
+        <div class="step-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+          <div class="step-item">Початково: <code>["Jazz", "Blues"]</code></div>
+          <div class="step-item">push: <code>["Jazz", "Blues", "Rock-n-Roll"]</code></div>
+          <div class="step-item">Середина: <code>["Jazz", "Classics", "Rock-n-Roll"]</code></div>
+          <div class="step-item">shift: видалено <code>"Jazz"</code></div>
+          <div class="step-item">unshift: <code>["Rap", "Reggae", "Classics", "Rock-n-Roll"]</code></div>
+        </div>
+        <div class="form-row" style="margin-top: 10px;">
+          <button id="btn-run-styles" class="btn btn-primary">Оновити фінальний масив styles</button>
+        </div>
+        <div id="styles-result" class="result-box success">Підсумковий масив: ["Rap", "Reggae", "Classics", "Rock-n-Roll"]</div>
+      </section>
+    </div>
+
+    <!-- Консольний термінал -->
+    <div class="console-panel">
+      <div class="console-header">
+        <h3>💻 Лог виконання скрипта</h3>
+      </div>
+      <div id="console-output" class="console-output">
+        <!-- лог -->
+      </div>
+    </div>
+  </div>
 
   <script src="lesson14.js"></script>
 </body>

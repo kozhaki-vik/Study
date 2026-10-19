@@ -3,15 +3,16 @@
 // 1. перший абзац: золотий фон
 const p1 = document.querySelector('#p1');
 if (p1) {
-  p1.style.backgroundColor = "gold";
+  p1.style.backgroundColor = "#fef08a";
+  p1.style.color = "#713f12";
 }
 
 // 2. другий абзац: стилі напряму
 const p2 = document.querySelector('#p2');
 if (p2) {
-  p2.style.backgroundColor = "gold";
-  p2.style.color = "blue";
-  p2.style.fontSize = "2rem";
+  p2.style.backgroundColor = "#dbeafe";
+  p2.style.color = "#1e40af";
+  p2.style.fontSize = "1.15rem";
 }
 
 // 3. третій абзац: додаємо клас third
@@ -31,8 +32,9 @@ const buttons = document.querySelectorAll('button');
 
 // 5. перша кнопка: колір і фон
 if (buttons[0]) {
-  buttons[0].style.backgroundColor = "gold";
-  buttons[0].style.color = "blue";
+  buttons[0].style.backgroundColor = "#e0e7ff";
+  buttons[0].style.color = "#4338ca";
+  buttons[0].style.borderColor = "#a5b4fc";
 }
 
 // 6. друга кнопка: ховає абзац p1
