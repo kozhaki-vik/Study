@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+article {
+  margin: 2vw 0;
+  display: grid;
+  border: 1px dashed #ccc;
+}
+
+article div {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* кольори блоків за замовчуванням */
+article div:nth-of-type(1) { background-color: #c9316b; }
+article div:nth-of-type(2) { background-color: #c9319e; }
+article div:nth-of-type(3) { background-color: #c231c9; }
+article div:nth-of-type(4) { background-color: #8f31c9; }
+article div:nth-of-type(5) { background-color: #5c31c9; }
+article div:nth-of-type(6) { background-color: #3138c9; }
+article div:nth-of-type(7) { background-color: #316bc9; }
+article div:nth-of-type(8) { background-color: #319ec9; }
+article div:nth-of-type(9) { background-color: #31c9c2; }
+article div:nth-of-type(10) { background-color: #31c98f; }
+article div:nth-of-type(11) { background-color: #31c95c; }
+article div:nth-of-type(12) { background-color: #38c931; }
+
+/* 1. 3 стовпці: 15%, 60%, 25% */
+.grid1 {
+  grid-template-columns: 15% 60% 25%;
+}
+
+/* 2. 3 рядки: 295px, 1fr, 270px */
+.grid2 {
+  grid-template-rows: 295px 1fr 270px;
+}
+
+/* 3. 3 рядки 90px 300px 1fr і 4 стовпці однакової ширини */
+.grid3 {
+  grid-template-rows: 90px 300px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 4. 4 стовпці однакової ширини в центрі контейнера */
+.grid4 {
+  grid-template-columns: repeat(4, 100px);
+  justify-content: center;
+}
+
+/* 5. 4 стовпці по 50px в кінці рядка */
+.grid5 {
+  grid-template-columns: repeat(4, 50px);
+  justify-content: end;
+}
+
+/* 6. 4 стовпці по 50px з рівномірною відстанню між парами */
+.grid6 {
+  grid-template-columns: repeat(4, 50px);
+  justify-content: space-between;
+}
+
+/* 7. 4 стовпці по 50px з однаковими відстанями з обох боків */
+.grid7 {
+  grid-template-columns: repeat(4, 50px);
+  justify-content: space-around;
+}
+
+/* 8. 4 стовпці по 50px з рівномірними відстанями до кінців і між стовпцями */
+.grid8 {
+  grid-template-columns: repeat(4, 50px);
+  justify-content: space-evenly;
+}
+
+/* 9. 2 стовпці, вирівнювання за замовчуванням (stretch) */
+.grid9 {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+}
+
+/* 10. 2 стовпці, вирівнювання до початкового краю */
+.grid10 {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+}
+
+/* 11. 2 стовпці, вирівнювання по центру */
+.grid11 {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+/* 12. 2 стовпці, рівномірна відстань між рядками */
+.grid12 {
+  height: 500px;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: space-between;
+}
+
+/* 13. 2 стовпці, рівномірна відстань до кінців і між рядками */
+.grid13 {
+  height: 500px;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: space-evenly;
+}
