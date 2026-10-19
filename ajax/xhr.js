@@ -48,12 +48,15 @@ function myConsole(c, status = '') {
             message = 'Error: server returned status: ' + status;
             alertClass = 'alert-danger';
             break;
-            Default: break;
+        default:
+            break;
     }
     text = `<div class="alert ${alertClass}" role="alert">${message}</div>`;
     el("#console").innerHTML += text;
 }
-    function sendRequest() {
+    function sendRequest(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        el("#console").innerHTML = '';
         // Create request: calling the CreateRequest function;
         const request = CreateRequest();
         const url = 'https://jsonplaceholder.typicode.com/posts/4';

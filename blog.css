@@ -88,4 +88,9 @@ body {
             "s"
             "f";
     }
+
+    .site-header {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -20,3 +20,4 @@ const words = ["яблуко", "кіт", "програмування", "дім",
 const filteredWords = filterLength(words, "4");
 console.log("Слова довші за 4 символи:", filteredWords);
 // виведе: ["яблуко", "програмування", "frontend"]
+//# sourceMappingURL=lesson27.js.map

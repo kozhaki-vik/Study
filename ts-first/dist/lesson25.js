@@ -35,3 +35,4 @@ const updatedUsers = modifyUser(users, "1", (user) => {
     return { ...user, name: "Dmytro" };
 });
 console.log("Оновлені юзери:", updatedUsers);
+//# sourceMappingURL=lesson25.js.map

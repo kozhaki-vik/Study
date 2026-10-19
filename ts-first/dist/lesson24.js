@@ -18,3 +18,4 @@ const add = (a, b) => {
 };
 const result = add(10, 20);
 console.log("Результат додавання:", result);
+//# sourceMappingURL=lesson24.js.map
