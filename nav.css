@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* навігація: вирівнювання по вертикалі та горизонталі */
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center; /* однакова відстань зверху і знизу */
+  justify-content: space-between; /* brand зліва, меню справа */
+  padding: 0 .5rem;
+}
+
+.link-list {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.link {
+  padding: .5rem;
+}
+
+.link:hover {
+  background-color: #777;
+}
+
+.link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper, .grow-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+}
+
+/* однакова ширина на весь простір */
+.wrapper .item {
+  flex: 1;
+}
+
+.item-blue {
+  background-color: blue;
+}
+
+.item-orange {
+  background-color: orange;  
+}
+
+.item-green {
+  background-color: green;
+}
+
+.item {
+  color: white;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* фактори зростання */
+.grow-wrapper .item-blue {
+  flex-grow: 3;
+}
+
+.grow-wrapper .item-green {
+  flex-grow: 1;
+}
+
+/* картки */
+.flexbox {
+  --min: 30ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.flexbox .card {
+  flex: 1 1 var(--min); /* пропорційно ділять простір і мають базовий розмір */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}

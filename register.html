@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body class="body">
+
+    <!-- шапка сайту -->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="register.html" class="active">Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- форма реєстрації -->
+    <main class="form-container">
+        <div class="form-card">
+            <h2>Реєстрація на сайті</h2>
+            <p>Заповніть форму для створення облікового запису</p>
+
+            <form action="#" method="POST" class="site-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastName">Прізвище:</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Введіть прізвище" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName">Ім'я:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Введіть ім'я" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Електронна адреса:</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефону:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+380..." required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Підтвердження пароля:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                </div>
+
+                <!-- вибір статі -->
+                <div class="form-group gender-group">
+                    <label>Стать:</label>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="gender" value="female" required> Жінка
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="male"> Чоловік
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Зареєструватися</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Навчальний проєкт</p>
+    </footer>
+
+</body>
+</html>
